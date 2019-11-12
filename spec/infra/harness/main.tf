@@ -9,5 +9,6 @@ data "terraform_remote_state" "prerequisites" {
 module "admin" {
   source = "../../../../"
 
+  admin_user_name = var.admin_user_name
   admin_group_name = var.admin_group_name
 }

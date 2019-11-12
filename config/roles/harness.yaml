@@ -4,4 +4,5 @@ state_file: "%{hiera('project_directory')}/state/harness.tfstate"
 vars:
   region: "%{hiera('region')}"
 
+  admin_user_name: "test-admin"
   admin_group_name: "test-admins"

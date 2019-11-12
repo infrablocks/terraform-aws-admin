@@ -1,3 +1,7 @@
+output "admin_user_arn" {
+  value = aws_iam_user.admin.arn
+}
+
 output "admin_group_arn" {
   value = aws_iam_group.admins.arn
 }
