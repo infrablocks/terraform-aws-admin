@@ -1,12 +1,18 @@
 require 'aws-sdk'
 require 'awspec'
+require 'ostruct'
 
 require_relative '../terraform_module'
 
 shared_context :terraform do
   include Awspec::Helper::Finder
 
-  let(:vars) {TerraformModule.configuration.for(:harness).vars}
+  let(:vars) {
+    OpenStruct.new(
+        TerraformModule.configuration
+            .for(:harness)
+            .vars)
+  }
 
   def output_for(role, name)
     TerraformModule.output_for(role, name)
