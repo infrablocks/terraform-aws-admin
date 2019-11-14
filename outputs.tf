@@ -7,7 +7,7 @@ output "admin_user_name" {
 }
 
 output "admin_user_password" {
-  value = aws_iam_user_login_profile.admin.encrypted_password
+  value = element(concat(aws_iam_user_login_profile.admin.*.encrypted_password, list("")), 0)
 }
 
 output "admin_group_arn" {
