@@ -19,3 +19,10 @@ resource "aws_iam_user_login_profile" "admin" {
   pgp_key = var.admin_public_gpg_key
   password_length = var.admin_user_password_length
 }
+
+resource "aws_iam_access_key" "admin" {
+  count = var.include_access_key ? 1 : 0
+
+  user = aws_iam_user.admin.name
+  pgp_key = var.admin_public_gpg_key
+}
