@@ -6,3 +6,6 @@ vars:
 
   admin_user_name: "test-admin"
   admin_group_name: "test-admins"
+
+  admin_public_gpg_key_path: "%{hiera('public_gpg_key_path')}"
+

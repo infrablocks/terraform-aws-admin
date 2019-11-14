@@ -2,6 +2,14 @@ output "admin_user_arn" {
   value = aws_iam_user.admin.arn
 }
 
+output "admin_user_name" {
+  value = var.admin_user_name
+}
+
+output "admin_user_password" {
+  value = aws_iam_user_login_profile.admin.encrypted_password
+}
+
 output "admin_group_arn" {
   value = aws_iam_group.admins.arn
 }

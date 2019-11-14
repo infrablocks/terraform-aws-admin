@@ -14,6 +14,10 @@ shared_context :terraform do
             .vars)
   }
 
+  def configuration
+    TerraformModule.configuration
+  end
+
   def output_for(role, name)
     TerraformModule.output_for(role, name)
   end
