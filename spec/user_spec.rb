@@ -1,6 +1,8 @@
 require 'spec_helper'
 require 'iostreams'
 
+require_relative 'iostreams/pgp'
+
 describe 'user' do
   let(:user_name) { vars.admin_user_name }
   let(:user_arn) { output_for(:harness, 'admin_user_arn') }
