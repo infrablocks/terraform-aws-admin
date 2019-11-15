@@ -7,6 +7,9 @@ set -o pipefail
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_DIR="$( cd "$SCRIPT_DIR/../../.." && pwd )"
 
+GPG_TTY="$(tty)"
+export GPG_TTY
+
 cd "$PROJECT_DIR"
 
 set +e
