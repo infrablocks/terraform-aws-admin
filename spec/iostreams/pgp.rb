@@ -4,8 +4,6 @@ module IOStreams
       version_check
       command = "#{executable} --no-tty --batch --import"
 
-      puts command
-
       out, err, status = Open3.capture3(command, binmode: true, stdin_data: key)
       logger.debug { "IOStreams::Pgp.import: #{command}\n#{err}#{out}" } if logger
       if status.success? && err.length > 0
