@@ -1,5 +1,5 @@
-Terraform AWS Organisation
-==========================
+Terraform AWS Admin
+===================
 
 [![CircleCI](https://circleci.com/gh/infrablocks/terraform-aws-admin.svg?style=svg)](https://circleci.com/gh/infrablocks/terraform-aws-admin)
 
