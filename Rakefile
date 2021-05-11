@@ -30,7 +30,7 @@ task default: 'test:integration'
 
 RakeTerraform.define_installation_tasks(
   path: File.join(Dir.pwd, 'vendor', 'terraform'),
-  version: '0.12.17'
+  version: '0.15.3'
 )
 
 namespace :encryption do
@@ -77,6 +77,7 @@ namespace :keys do
       RakeGPG.define_generate_key_task(
         output_directory: 'config/secrets/admin',
         name_prefix: 'gpg',
+        armor: false,
         owner_name: 'InfraBlocks Maintainers',
         owner_email: 'maintainers@infrablocks.io',
         owner_comment: 'terraform-aws-admin Admin Key'

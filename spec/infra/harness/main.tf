@@ -7,7 +7,8 @@ data "terraform_remote_state" "prerequisites" {
 }
 
 module "admin" {
-  source = "../../../../"
+  # This makes absolutely no sense. I think there's a bug in terraform.
+  source = "./../../../../../../../"
 
   admin_user_name = var.admin_user_name
   admin_group_name = var.admin_group_name
