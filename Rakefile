@@ -34,8 +34,14 @@ RakeTerraform.define_installation_tasks(
 )
 
 namespace :encryption do
+  namespace :directory do
+    task :ensure do
+      FileUtils.mkdir_p('config/secrets/ci')
+    end
+  end
+
   namespace :passphrase do
-    task :generate do
+    task generate: ["directory:ensure"] do
       File.open('config/secrets/ci/encryption.passphrase', 'w') do |f|
         f.write(SecureRandom.base64(36))
       end
@@ -65,6 +71,12 @@ namespace :keys do
   end
 
   namespace :admin do
+    namespace :directory do
+      task :ensure do
+        FileUtils.mkdir_p('config/secrets/admin')
+      end
+    end
+
     namespace :passphrase do
       task :generate do
         File.open('config/secrets/admin/gpg.passphrase', 'w') do |f|
@@ -87,8 +99,17 @@ namespace :keys do
       end
     end
 
-    task generate: %w[passphrase:generate gpg:generate]
+    task generate: %w[directory:ensure passphrase:generate gpg:generate]
   end
+end
+
+namespace :secrets do
+  task regenerate: %w[
+    encryption:passphrase:generate
+    keys:deploy:generate
+    keys:secrets:generate
+    keys:admin:generate
+  ]
 end
 
 RakeCircleCI.define_project_tasks(
