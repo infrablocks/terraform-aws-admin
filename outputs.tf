@@ -3,7 +3,7 @@ output "admin_user_arn" {
 }
 
 output "admin_user_name" {
-  value = var.admin_user_name
+  value = local.admin_user_name
 }
 
 output "admin_user_password" {

@@ -1,9 +1,10 @@
 resource "aws_iam_user" "admin" {
-  name = var.admin_user_name
+  name = local.admin_user_name
+  force_destroy = true
 }
 
 resource "aws_iam_group_membership" "admins" {
-  name = "${var.admin_group_name}-group-membership"
+  name = "${local.admin_group_name}-group-membership"
 
   users = [
     aws_iam_user.admin.name,
@@ -13,16 +14,16 @@ resource "aws_iam_group_membership" "admins" {
 }
 
 resource "aws_iam_user_login_profile" "admin" {
-  count = var.include_login_profile ? 1 : 0
+  count = local.include_login_profile ? 1 : 0
 
   user = aws_iam_user.admin.name
-  pgp_key = var.admin_public_gpg_key
-  password_length = var.admin_user_password_length
+  pgp_key = local.admin_public_gpg_key
+  password_length = local.admin_user_password_length
 }
 
 resource "aws_iam_access_key" "admin" {
-  count = var.include_access_key ? 1 : 0
+  count = local.include_access_key ? 1 : 0
 
   user = aws_iam_user.admin.name
-  pgp_key = var.admin_public_gpg_key
+  pgp_key = local.admin_public_gpg_key
 }

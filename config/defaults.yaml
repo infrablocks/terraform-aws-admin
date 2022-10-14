@@ -2,6 +2,7 @@
 region: 'us-east-1'
 
 component: 'test'
+deployment_identifier: "%{hiera('seed')}"
 
-work_directory: 'build'
-configuration_directory: "%{hiera('work_directory')}/%{hiera('source_directory')}"
+admin_public_gpg_key_path: "%{cwd}/config/secrets/admin/gpg.public"
+admin_private_gpg_key_path: "%{cwd}/config/secrets/admin/gpg.private"

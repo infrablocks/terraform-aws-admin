@@ -1,5 +1,5 @@
 resource "aws_iam_group" "admins" {
-  name = var.admin_group_name
+  name = local.admin_group_name
 }
 
 data "aws_iam_policy_document" "admin" {
@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "admin" {
 }
 
 resource "aws_iam_group_policy" "admin" {
-  name = "${var.admin_group_name}-group-policy"
+  name = "${local.admin_group_name}-group-policy"
   group = aws_iam_group.admins.name
-  policy = coalesce(var.admin_group_policy_contents, data.aws_iam_policy_document.admin.json)
+  policy = coalesce(local.admin_group_policy_contents, data.aws_iam_policy_document.admin.json)
 }
