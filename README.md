@@ -23,7 +23,7 @@ Usage
 To use the module, include something like the following in your Terraform
 configuration:
 
-```hcl-terraform
+```terraform
 module "admin" {
   source  = "infrablocks/admin/aws"
   version = "2.0.0"
