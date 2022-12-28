@@ -43,27 +43,27 @@ for more details.
 
 ### Inputs
 
-| Name                        | Description                                                                                                                                     | Default  |           Required           |
-|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|:----------------------------:|
-| admin_user_name             | The name of the admin user.                                                                                                                     | "admin"  |              no              |
-| admin_group_name            | The name of the admins group.                                                                                                                   | "admins" |              no              |
-| admin_group_policy_contents | The contents of the policy associated with the admins group. By default, full access is granted.                                                |    ""    |              no              |
-| admin_public_gpg_key        | The contents of the public GPG key for the admin, base 64 encoded. Only required if `include_login_profile` or `include_access_key` are `true`. |    -     | yes, depending on other vars |
-| admin_user_password_length  | The length of the admin user password to create. Only relevant if `include_login_profile` is `true`.                                            |    32    |              no              |
-| include_login_profile       | Whether or not to generate a login profile for the admin user. Uses the provided admin GPG key to encrypt the credentials. Defaults to `true`.  |   true   |              no              |
-| include_access_key          | Whether or not to generate an access key for the admin user. Uses the provided admin GPG key to encrypt the credentials. Defaults to `true`.    |   true   |              no              |
+| Name                          | Description                                                                                                                                     |  Default   |           Required           |
+|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|:----------:|:----------------------------:|
+| `admin_user_name`             | The name of the admin user.                                                                                                                     | `"admin"`  |              No              |
+| `admin_group_name`            | The name of the admins group.                                                                                                                   | `"admins"` |              No              |
+| `admin_group_policy_contents` | The contents of the policy associated with the admins group. By default, full access is granted.                                                |    `""`    |              No              |
+| `admin_public_gpg_key`        | The contents of the public GPG key for the admin, base 64 encoded. Only required if `include_login_profile` or `include_access_key` are `true`. |     -      | Yes, depending on other vars |
+| `admin_user_password_length`  | The length of the admin user password to create. Only relevant if `include_login_profile` is `true`.                                            |    `32`    |              No              |
+| `include_login_profile`       | Whether or not to generate a login profile for the admin user. Uses the provided admin GPG key to encrypt the credentials. Defaults to `true`.  |   `true`   |              No              |
+| `include_access_key`          | Whether or not to generate an access key for the admin user. Uses the provided admin GPG key to encrypt the credentials. Defaults to `true`.    |   `true`   |              No              |
 
 ### Outputs
 
-| Name                         | Description                                                                                                                                                                           |
-|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| admin_user_arn               | The ARN of the managed admin user.                                                                                                                                                    |
-| admin_user_name              | The name of the managed admin user.                                                                                                                                                   |
-| admin_user_password          | The password of the managed admin user, base64 encoded and encrypted using the provided admin public GPG key. When `include_login_profile` is `false`, this is an empty string.       |
-| admin_user_access_key_id     | The access key ID of the managed admin user. When `include_access_key` is `false`, this is an empty string.                                                                           |
-| admin_user_secret_access_key | The secret access key of the managed admin user, base64 encoded and encrypted using the provided admin public GPG key. When `include_access_key` is `false`, this is an empty string. |
-| admin_group_arn              | The ARN of the managed admins group.                                                                                                                                                  |
-| admin_group_policy_name      | The name of the policy attached to the managed admins group.                                                                                                                          |
+| Name                           | Description                                                                                                                                                                           |
+|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `admin_user_arn`               | The ARN of the managed admin user.                                                                                                                                                    |
+| `admin_user_name`              | The name of the managed admin user.                                                                                                                                                   |
+| `admin_user_password`          | The password of the managed admin user, base64 encoded and encrypted using the provided admin public GPG key. When `include_login_profile` is `false`, this is an empty string.       |
+| `admin_user_access_key_id`     | The access key ID of the managed admin user. When `include_access_key` is `false`, this is an empty string.                                                                           |
+| `admin_user_secret_access_key` | The secret access key of the managed admin user, base64 encoded and encrypted using the provided admin public GPG key. When `include_access_key` is `false`, this is an empty string. |
+| `admin_group_arn`              | The ARN of the managed admins group.                                                                                                                                                  |
+| `admin_group_policy_name`      | The name of the policy attached to the managed admins group.                                                                                                                          |
 
 ### Compatibility
 
