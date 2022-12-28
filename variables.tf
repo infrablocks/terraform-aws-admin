@@ -25,7 +25,7 @@ variable "admin_public_gpg_key" {
 variable "admin_user_password_length" {
   type        = number
   default     = 32
-  description = "The length of the admin user password to create. Only required if 'include_login_profile' is true."
+  description = "The length of the admin user password to create. Only relevant if 'include_login_profile' is true."
 }
 
 variable "include_login_profile" {
