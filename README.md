@@ -1,7 +1,9 @@
 Terraform AWS Admin
 ===================
 
-[![CircleCI](https://circleci.com/gh/infrablocks/terraform-aws-admin.svg?style=svg)](https://circleci.com/gh/infrablocks/terraform-aws-admin)
+[![Version](https://img.shields.io/github/v/tag/infrablocks/terraform-aws-admin?label=version&sort=semver)](https://github.com/infrablocks/terraform-aws-admin/tags)
+[![Build Pipeline](https://img.shields.io/circleci/build/github/infrablocks/terraform-aws-admin/main?label=build-pipeline)](https://app.circleci.com/pipelines/github/infrablocks/terraform-aws-admin?filter=all)
+[![Maintainer](https://img.shields.io/badge/maintainer-go--atomic.io-red)](https://go-atomic.io)
 
 A Terraform module for managing an admin user and group.
 
