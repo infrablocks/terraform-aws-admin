@@ -49,7 +49,7 @@ describe 'full' do
   it 'allows the admins group to do anything' do
     expect(iam_group('administrators'))
       .to(have_inline_policy('administrators-group-policy')
-            .policy_document(<<~'DOC'))
+            .policy_document(<<~DOC))
               {
                 "Version": "2012-10-17",
                 "Statement": [

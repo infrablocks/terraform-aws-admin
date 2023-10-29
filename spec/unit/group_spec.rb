@@ -71,7 +71,7 @@ describe 'group' do
 
   describe 'when admin group policy contents provided' do
     before(:context) do
-      @policy_contents = <<~'DOC'
+      @policy_contents = <<~DOC
         {
           "Version": "2012-10-17",
           "Statement": [
